@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Greetings from './Greetings'
+import Post from './Post'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    console.log('loadodths')
+    let newPost = {
+        title: 'coolpost',
+        author: 'coolman',
+        body: 'This is a story all about how my life got flipped turned upside down',
+        comments: [
+            'cool!',
+            'not cool >:C',
+            'bro, relax^^^'
+        ]
+    }
+    return ( 
+        <>
+            <Post 
+                title={newPost.title}
+                author={newPost.author}
+                body={newPost.body}
+                comments={newPost.comments}
+            />
+            <Greetings 
+                name={'Chris'} 
+                age={98} 
+                location={"Sorry, I couldn't hear"}
+                number={500}
+            />
+        </>
+    )
 }
 
 export default App;
